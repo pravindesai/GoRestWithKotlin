@@ -34,7 +34,7 @@ class FcmCloudMessagingService:FirebaseMessagingService(){
 
     override fun onNewToken(token: String) {
         super.onNewToken(token)
-        Log.i(TAG, "onNewFcmToken: "+token  )
+        Log.i("**FCM TOKEN", "onNewFcmToken: "+token  )
         //UpdateToken
     }
 

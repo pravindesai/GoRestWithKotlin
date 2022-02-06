@@ -54,7 +54,7 @@ class GoRestActivity : AppCompatActivity(), View.OnClickListener {
     private fun getFcmToken() {
         FirebaseMessaging.getInstance().token.addOnCompleteListener {
             if (it.isSuccessful){
-                Log.i(TAG, "FcmToken: "+it.result )
+                Log.i("**FCM TOKEN", "FcmToken: "+it.result )
             }
         }
     }
