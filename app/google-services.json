@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "521735916267",
+    "project_id": "gorestapi-33303",
+    "storage_bucket": "gorestapi-33303.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521735916267:android:5e1eb442f84e7116548cae",
+        "android_client_info": {
+          "package_name": "com.pravin.gorestwithkotlin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "521735916267-pol9slt03v5mqq384ogrlllessa8gec6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pravin.gorestwithkotlin",
+            "certificate_hash": "feb7aa1c97ec63d7f8fa4e693c25f3e61c3b1a84"
+          }
+        },
+        {
+          "client_id": "521735916267-oibok9i2sh7cmena9ubmqoeoo2bbtmaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxAPLZwAnghfknhSfyVUwpMe1Rb-K8nzg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "521735916267-oibok9i2sh7cmena9ubmqoeoo2bbtmaq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
