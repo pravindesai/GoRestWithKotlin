@@ -22,8 +22,11 @@ object LocalNotification {
     private val CHANNEL_ID   = "FCM_CHANNEL"
     private val CHANNEL_NAME = "FCM_CHANNEL"
 
-    fun show(context: Context, title:String?, body:String?, imgUrl: String?, pendingIntent: PendingIntent?){
+        fun show(context: Context, title:String?, body:String?, imgUrl: String?, pendingIntent: PendingIntent?){
         val notificationManager = NotificationManagerCompat.from(context)
+
+        val attributeSet: AudioAttributes = AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_NOTIFICATION).build()
+        val soundUri: Uri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE+"://" + context.packageName + "/" + R.raw.britania)
 
         val notificationBuilder =
             NotificationCompat.Builder(context, CHANNEL_ID)
@@ -32,14 +35,11 @@ object LocalNotification {
                 .setContentText(body)
                 .setColor(ContextCompat.getColor(context, R.color.theme_green))
                 .setContentIntent(pendingIntent)
+                .setSound(soundUri)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             val channel: NotificationChannel = NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT)
-            val soundUri: Uri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE+"://" + context.packageName + "/" + R.raw.britania)
-            val attributeSet: AudioAttributes = AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_NOTIFICATION).build()
-
             channel.setSound(soundUri,attributeSet)
-            notificationBuilder.setSound(soundUri)
             notificationManager.createNotificationChannel(channel)
         }
 
@@ -52,6 +52,7 @@ object LocalNotification {
 
         notificationManager.notify(1,notificationBuilder.build())
     }
+
 
     private fun getBitmapfromUrl(context: Context,imageUrl: String): Bitmap? {
         return try {
