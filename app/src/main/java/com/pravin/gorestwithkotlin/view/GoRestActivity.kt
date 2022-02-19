@@ -16,8 +16,10 @@ import com.pravin.gorestwithkotlin.databinding.GorestActivityMainBinding
 import com.pravin.gorestwithkotlin.pojo.Post
 import com.pravin.gorestwithkotlin.pojo.PostResponse
 import com.pravin.gorestwithkotlin.viewmodel.GoRestActivityViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 
+@AndroidEntryPoint
 class GoRestActivity : AppCompatActivity(), View.OnClickListener {
     private val TAG = "**" + this.javaClass.simpleName
 
@@ -95,6 +97,8 @@ class GoRestActivity : AppCompatActivity(), View.OnClickListener {
                     }
 
                 }
+                is PostState.Empty -> {}
+                else -> {}
             }
         }
     }
